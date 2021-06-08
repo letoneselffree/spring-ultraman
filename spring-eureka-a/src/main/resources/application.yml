@@ -1,0 +1,23 @@
+server:
+  port: 9091
+
+spring:
+  application:
+    name: eureka-server
+
+eureka:
+  #eureka实例名，集群中根据这里相互识别
+  instance:
+    hostname: eureka-a
+  #客户端
+  client:
+    #是否开启注册服务，无需自己注册自己
+#    register-with-eureka: false
+    #是否拉取服务列表
+#    fetch-registry: false
+    #注册中心地址
+    service-url:
+      defaultZone: http://localhost:9092/eureka/
+  server:
+    #是否开启安全保护，默认是开启的，如果默认开启，注册中心的服务列表就算有些服务断开了，也会继续保存
+    enable-self-preservation: false
