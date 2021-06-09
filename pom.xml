@@ -5,6 +5,8 @@
     <modules>
         <module>spring-eureka</module>
         <module>spring-provider</module>
+        <module>spring-consumer</module>
+        <module>spring-feign</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -43,14 +45,22 @@
 
     -->
 
-    <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-dependencies -->
+
     <dependencyManagement>
         <dependencies>
+            <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-dependencies -->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
                 <version>${spring-cloud.version}</version>
                 <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.20</version>
                 <scope>import</scope>
             </dependency>
         </dependencies>

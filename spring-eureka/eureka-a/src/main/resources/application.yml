@@ -19,7 +19,7 @@ eureka:
     register-with-eureka: true
     #是否拉取服务列表
     fetch-registry: true
-    #注册中心地址
+    #注册中心地址,实现高可用
     service-url:
       defaultZone: http://eureka-b:9002/eureka/, http://eureka-c:9003/eureka/
   server:
