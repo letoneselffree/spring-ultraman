@@ -12,9 +12,9 @@ eureka:
   #客户端
   client:
     #是否开启注册服务，无需自己注册自己
-#    register-with-eureka: false
+    register-with-eureka: true
     #是否拉取服务列表
-#    fetch-registry: false
+    fetch-registry: true
     #注册中心地址
     service-url:
       defaultZone: http://localhost:9092/eureka/
