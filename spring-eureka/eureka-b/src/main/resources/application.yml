@@ -1,0 +1,23 @@
+server:
+  port: 9002
+
+spring:
+  application:
+    name: eureka-server
+
+eureka:
+  instance:
+    hostname: eureka-b
+    #续约时间
+    lease-expiration-duration-in-seconds: 90
+    #定时任务时间，每隔多少秒去重新刷新续约时间
+    lease-renewal-interval-in-seconds: 30
+  client:
+    service-url:
+      defaultZone: http://eureka-a:9001/eureka/, http://eureka-c:9003/eureka/
+    #每隔多少秒刷新获取服务列表
+    registry-fetch-interval-seconds: 30
+    register-with-eureka: true
+    fetch-registry: true
+  server:
+    enable-self-preservation: false

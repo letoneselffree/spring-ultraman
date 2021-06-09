@@ -8,21 +8,13 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>spring-eureka-b</artifactId>
-    <packaging>jar</packaging>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-eureka-server -->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
-        </dependency>
-
-    </dependencies>
+    <artifactId>spring-provider</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>provider-a</module>
+        <module>provider-b</module>
+    </modules>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
