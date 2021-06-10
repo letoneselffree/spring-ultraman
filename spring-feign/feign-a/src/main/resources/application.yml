@@ -10,6 +10,7 @@ eureka:
     service-url:
       defaultZone: http://localhost:9002/eureka/
 
+#开启 Hystrix 功能
 feign:
-  hystrix:
+  circuitbreaker:
     enabled: true

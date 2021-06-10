@@ -1,0 +1,22 @@
+server:
+  port: 9051
+
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          # 配置git仓库的地址
+          uri: https://github.com/letoneselffree/config-server.git
+          # git仓库地址下的相对地址，可以配置多个，用,分割。
+          search-paths: config-server
+          username: letoneselffree
+          password: zxc+-*789632145
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9003/eureka/

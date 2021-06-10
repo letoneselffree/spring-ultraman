@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.GetMapping;
  *
  */
 
-@FeignClient(name = "provider-service", fallback = InvokeFallBack.class)
+@FeignClient(value = "provider-service", fallback = InvokeFallBack.class)
 public interface ProviderInvoke {
 
     //服务中的接口请求路径
