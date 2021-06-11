@@ -13,6 +13,8 @@
     <packaging>pom</packaging>
     <modules>
         <module>config-a</module>
+        <module>config-b</module>
+        <module>config-c</module>
     </modules>
 
     <properties>

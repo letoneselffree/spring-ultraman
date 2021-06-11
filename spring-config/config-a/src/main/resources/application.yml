@@ -14,9 +14,15 @@ spring:
           search-paths: config-server
           username: letoneselffree
           password: zxc+-*789632145
+          skip-ssl-validation: true
+    bus:
+      enabled: true
+      trace:
+        enabled: true
 
 
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:9003/eureka/
+

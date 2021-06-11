@@ -1,0 +1,19 @@
+server:
+  port: 9052
+
+spring:
+  application:
+    name: config-client
+  cloud:
+    bus:
+      enabled: true
+      trace:
+        enabled: true
+
+#将/actuator/refresh这个 Endpoint 暴露出来
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh
+
