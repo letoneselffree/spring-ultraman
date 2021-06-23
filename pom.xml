@@ -9,6 +9,7 @@
         <module>spring-feign</module>
         <module>spring-hystrix</module>
         <module>spring-config</module>
+        <module>spring-sleuth-zipkin</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

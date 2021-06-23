@@ -16,6 +16,10 @@ spring:
         enabled: true
         #指定 Server 端的 name, 也就是 Server 端spring.application.name的值
         service-id: config-server
+    bus:
+      enabled: true
+      trace:
+        enabled: true
 
 
 eureka:

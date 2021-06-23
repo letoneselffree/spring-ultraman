@@ -4,16 +4,11 @@ server:
 spring:
   application:
     name: config-client
-  cloud:
-    bus:
-      enabled: true
-      trace:
-        enabled: true
-#  rabbitmq:
-#    host: localhost
-#    port: 5672
-#    username: guest
-#    password: guest
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
 
 
 #将/actuator/refresh这个 Endpoint 暴露出来
@@ -21,5 +16,5 @@ management:
   endpoints:
     web:
       exposure:
-        include: bus-refresh
+        include: "*"
 
