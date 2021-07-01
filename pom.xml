@@ -10,6 +10,7 @@
         <module>spring-hystrix</module>
         <module>spring-config</module>
         <module>spring-sleuth-zipkin</module>
+        <module>spring-gateway</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
