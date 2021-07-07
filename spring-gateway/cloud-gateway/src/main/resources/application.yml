@@ -21,6 +21,23 @@ spring:
             - Path=/gateway/**
           filters:
             - StripPrefix=1
+        #自定义过滤器
+        - id: two-filter
+          uri: lb://CONSUMER-CLIENT-A
+          order: 2
+          predicates:
+            - Path=/two/filter/**
+          filters:
+            - TwoFilter
+            - StripPrefix=2
+        - id: three-filter
+          uri: lb://CONSUMER-CLIENT-A
+          order: 3
+          predicates:
+            - Path=/three/filter/**
+          filters:
+            - ThreeFilter
+            - StripPrefix=2
 
 
 

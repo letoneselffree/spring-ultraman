@@ -2,16 +2,12 @@ package com.example.cloud.gateway.filters.bean;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
-import org.omg.CORBA.ServerRequest;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.gateway.filter.GatewayFilter;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
-import org.springframework.cloud.gateway.filter.factory.rewrite.ModifyRequestBodyGatewayFilterFactory;
 import org.springframework.core.Ordered;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.server.reactive.ServerHttpRequest;
-import org.springframework.stereotype.Component;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
 
@@ -40,17 +36,7 @@ public class OneFilter implements GatewayFilter, Ordered {
             }
             log.info("coco is: {}", coco);
         }else if (HttpMethod.POST.name().equalsIgnoreCase(method)){
-            ModifyRequestBodyGatewayFilterFactory.Config config = new ModifyRequestBodyGatewayFilterFactory.Config();
-            config.setRewriteFunction(String.class, String.class, (ex, in) -> {
-                if (StringUtils.isEmpty(in)){
-                    log.error("request body is null: {}", in);
-                    return Mono.empty();
-                }
-                //获取请求body，可做相关校验
-                String uid = ex.getRequest().getHeaders().getFirst("UID");
-                log.info("UID: {}, request body: {}", uid, in);
-                return Mono.just(in);
-            });
+
         }else {
             exchange.getResponse().setStatusCode(HttpStatus.BAD_REQUEST);
             return exchange.getResponse().setComplete();

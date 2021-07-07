@@ -1,7 +1,6 @@
 package com.example.cloud.gateway.config;
 
 import com.example.cloud.gateway.filters.bean.OneFilter;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.cloud.gateway.filter.factory.rewrite.*;
 import org.springframework.cloud.gateway.route.RouteLocator;

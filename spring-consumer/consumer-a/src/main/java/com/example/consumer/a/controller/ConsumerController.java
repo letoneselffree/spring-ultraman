@@ -1,12 +1,12 @@
 package com.example.consumer.a.controller;
 
+import com.alibaba.fastjson.JSONObject;
+import com.example.consumer.a.bean.ChaoChaoBean;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
 /**
@@ -30,8 +30,9 @@ public class ConsumerController {
     @Autowired
     private LoadBalancerClient client;
 
-    @GetMapping("/say")
-    public String say(){
+    @PostMapping("/say")
+    public String say(@RequestBody ChaoChaoBean bean){
+        log.info("request body: {}", JSONObject.toJSONString(bean));
         //负载均衡的选出一个provider-service的服务实例
         ServiceInstance instance = client.choose("provider-service");
         String url = "http://" + instance.getHost() + ":" + instance.getPort() + "/provider/super";
