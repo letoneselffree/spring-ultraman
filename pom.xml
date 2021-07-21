@@ -12,6 +12,7 @@
         <module>spring-sleuth-zipkin</module>
         <module>spring-gateway</module>
         <module>spring-consul</module>
+        <module>spring-nacos</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -28,6 +29,7 @@
     <properties>
         <java.version>1.8</java.version>
         <spring-cloud.version>2020.0.3</spring-cloud.version>
+        <spring-cloud-alibaba.version>2020.0.RC1</spring-cloud-alibaba.version>
     </properties>
 
 
@@ -41,11 +43,12 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-            <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+            <!-- https://mvnrepository.com/artifact/com.alibaba.cloud/spring-cloud-alibaba-dependencies -->
             <dependency>
-                <groupId>org.projectlombok</groupId>
-                <artifactId>lombok</artifactId>
-                <version>1.18.20</version>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba.version}</version>
+                <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
@@ -53,7 +56,6 @@
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
                 <version>1.2.76</version>
-                <scope>import</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
