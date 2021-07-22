@@ -39,7 +39,7 @@ public class GatewayConfig {
 
     @Bean
     public RouteLocator oneFilter(RouteLocatorBuilder builder) {
-        return builder.routes().route("one-filter", r -> r
+        return builder.routes().route("one-filter", r -> r.order(1)
                 .path("/gateway/one/**")
                 .filters(f -> f.filter(new OneFilter()).stripPrefix(2).prefixPath("/consumer"))
                 .uri("lb://CONSUMER-CLIENT-B")
