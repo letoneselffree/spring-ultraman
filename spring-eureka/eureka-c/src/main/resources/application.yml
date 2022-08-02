@@ -13,8 +13,8 @@ eureka:
     #定时任务时间，每隔多少秒去重新刷新续约时间
     lease-renewal-interval-in-seconds: 30
   client:
-    fetch-registry: true
-    register-with-eureka: true
+    fetch-registry: false
+    register-with-eureka: false
     service-url:
       defaultZone: http://eureka-a:9001/eureka/, http://eureka-b:9002/eureka/
   server:

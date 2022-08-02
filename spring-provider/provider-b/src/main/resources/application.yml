@@ -9,3 +9,18 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:9002/eureka/
+    #是否向注册中心注册自己
+    register-with-eureka: true
+    #是否向注册中心拉取已有的注册信息
+    fetch-registry: true
+    healthcheck:
+      enabled: true
+  instance:
+    #服务实例Id
+    instance-id: provider-service-b
+    #访问路径可以显示IP地址
+    prefer-ip-address: true
+    #续约更新时间间隔（默认30秒）
+    lease-renewal-interval-in-seconds: 30
+    #续约到期时间（默认90秒）
+    lease-expiration-duration-in-seconds: 90
